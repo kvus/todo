@@ -2,25 +2,25 @@ import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema(
   {
-    title:{
+    title: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     status: {
       type: String,
       enum: ["active", "complete"],
-      default: "active"
+      default: "active",
     },
-    completedAt:{
+    completedAt: {
       type: Date,
-      default: null
+      default: null,
     },
   },
   {
     timestamps: true, // createdAt va updatedAt tu dong them vao
-  }
-)
+  },
+);
 
-const Task = mongoose.model("Task", taskSchema)
-export default Task
+const Task = mongoose.model("Task", taskSchema);
+export default Task;
