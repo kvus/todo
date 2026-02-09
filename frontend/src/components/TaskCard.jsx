@@ -57,7 +57,7 @@ const TaskCard = ({ task, index, handleTaskChanged }) => {
           status: "active",
           completeAt: null,
         });
-        toast.success(`${task.title} đã đổi sang chưa hoàn thành.`)
+        toast.success(`${task.title} đã đổi sang chưa hoàn thành.`);
       }
       handleTaskChanged();
     } catch (error) {
@@ -139,7 +139,8 @@ const TaskCard = ({ task, index, handleTaskChanged }) => {
           </div>
         </div>
         {/* Nút chỉnh và nút xoá */}
-        <div className="hidden gap-2 group-hover:inline-flex animate-slide-up">
+        {/* Thay đổi: Dùng flex mặc định (cho mobile), trên desktop (md) thì ẩn đi và chỉ hiện khi hover */}
+        <div className="flex gap-2 md:hidden md:group-hover:inline-flex animate-slide-up">
           {/* Nút edit */}
           <Button
             variant="ghost"
